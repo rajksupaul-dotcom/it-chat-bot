@@ -9,7 +9,6 @@ from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Resolve paths relative to this file so the script works from any working directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 intents_path = os.path.join(BASE_DIR, 'intents.json')
@@ -29,11 +28,11 @@ with open(intents_path, 'r') as json_data:
 
 data = torch.load(model_path, map_location=device)
 
-input_size = data["input_size"]
+input_size  = data["input_size"]
 hidden_size = data["hidden_size"]
 output_size = data["output_size"]
-all_words = data['all_words']
-tags = data['tags']
+all_words   = data['all_words']
+tags        = data['tags']
 model_state = data["model_state"]
 
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
@@ -51,25 +50,27 @@ def get_response(msg):
 
     output = model(X)
     _, predicted = torch.max(output, dim=1)
-
     tag = tags[predicted.item()]
 
     probs = torch.softmax(output, dim=1)
-    prob = probs[0][predicted.item()]
+    prob  = probs[0][predicted.item()]
+
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
 
-    return "I do not understand..."
+    return ("I'm not sure I understand your issue. Please describe it in more detail, "
+            "or type 'create a ticket' to raise a support request with our IT team.")
 
 
 if __name__ == "__main__":
-    print("Let's chat! (type 'quit' to exit)")
+    print("IT Support Chatbot - Sam")
+    print("=" * 40)
+    print("Type 'quit' to exit\n")
     while True:
         sentence = input("You: ")
-        if sentence == "quit":
+        if sentence.lower() == "quit":
             break
-
         resp = get_response(sentence)
-        print(f"{bot_name}: {resp}")
+        print(f"{bot_name}: {resp}\n")

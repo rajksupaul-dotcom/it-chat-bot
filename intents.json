@@ -3,81 +3,355 @@
     {
       "tag": "greeting",
       "patterns": [
-        "Hi",
-        "Hey",
-        "How are you",
-        "Is anyone there?",
-        "Hello",
-        "Good day"
+        "Hi", "Hey", "Hello", "Good morning", "Good afternoon",
+        "Is anyone there?", "How are you", "Good day", "Howdy"
       ],
       "responses": [
-        "Hey :-)",
-        "Hello, thanks for visiting",
-        "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Hello! Welcome to IT Support. How can I assist you today?",
+        "Hi there! I'm Sam, your IT support assistant. What issue can I help you with?",
+        "Hey! IT Support here. What technical problem can I solve for you?"
       ]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "patterns": [
+        "Bye", "See you later", "Goodbye", "Thanks bye",
+        "That's all", "I'm done", "Exit", "Quit"
+      ],
       "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
+        "Goodbye! Don't hesitate to reach out if you face any other IT issues.",
+        "Take care! Your ticket has been noted. Have a great day!",
+        "Bye! Remember, IT Support is available 24/7 for your needs."
       ]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
-    },
-    {
-      "tag": "items",
       "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
+        "Thanks", "Thank you", "That's helpful", "Thanks a lot",
+        "Thank you so much", "Great help", "Appreciate it"
       ],
       "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
+        "Happy to help! Is there anything else I can assist you with?",
+        "You're welcome! Feel free to reach out anytime.",
+        "My pleasure! Don't hesitate to contact us if you need more support."
       ]
     },
     {
-      "tag": "payments",
+      "tag": "password_reset",
       "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
+        "I forgot my password",
+        "Reset my password",
+        "Can't login",
+        "Password not working",
+        "How to change password",
+        "My password expired",
+        "Locked out of account",
+        "Account locked",
+        "I need to reset my password",
+        "Password reset"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "To reset your password: 1) Go to the login page, 2) Click 'Forgot Password', 3) Enter your registered email, 4) Check your inbox for the reset link. If still locked, I'll escalate to Level 2 support.",
+        "For password reset: Visit our self-service portal at portal.company.com/reset, enter your employee ID, and follow the steps. Need further help? I can raise a ticket right away.",
+        "Your account may be locked after 5 failed attempts. Please wait 15 minutes or contact HR for identity verification before a manual reset."
       ]
     },
     {
-      "tag": "delivery",
+      "tag": "software_install",
       "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
+        "I need to install software",
+        "How to install an application",
+        "Software installation request",
+        "Install MS Office",
+        "Need a new application",
+        "Can I install software",
+        "Request software installation",
+        "Install antivirus",
+        "Need software on my laptop"
       ],
       "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
+        "Software installations require IT approval. Please raise a request via the IT portal at portal.company.com/software and mention the software name and business justification.",
+        "To install software: 1) Submit a request through the IT helpdesk portal, 2) Get manager approval, 3) IT will push the install remotely. Standard software (MS Office, Zoom, Teams) can be installed within 2 hours.",
+        "Unauthorized software installation is restricted. Please submit a formal request at the helpdesk and our team will review and install approved software within 24 hours."
       ]
     },
     {
-      "tag": "funny",
+      "tag": "internet_issue",
       "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
+        "Internet is not working",
+        "No internet connection",
+        "WiFi not connecting",
+        "Network issue",
+        "Cannot browse the internet",
+        "My internet is slow",
+        "WiFi keeps disconnecting",
+        "Network is down",
+        "VPN not working",
+        "Cannot connect to VPN"
       ],
       "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "For internet/network issues: 1) Restart your router/modem, 2) Disable and re-enable your network adapter, 3) Try forgetting and reconnecting to WiFi. If the issue persists, please call the network team at ext. 1234.",
+        "Network troubleshooting steps: Check if the LAN cable is properly connected, restart your machine, and try connecting to a different network. If on VPN, disconnect, restart VPN client, and reconnect.",
+        "If WiFi is slow or dropping: Move closer to the access point, switch from 5GHz to 2.4GHz, or use a wired connection. If the entire building is affected, I'll log a P1 network incident immediately."
+      ]
+    },
+    {
+      "tag": "hardware_issue",
+      "patterns": [
+        "My laptop is not working",
+        "Computer won't turn on",
+        "Screen is black",
+        "Keyboard not working",
+        "Mouse not responding",
+        "Printer not working",
+        "Hardware issue",
+        "My monitor is not displaying",
+        "Laptop overheating",
+        "USB port not working"
+      ],
+      "responses": [
+        "For hardware issues: 1) Restart the device, 2) Check all cable connections, 3) Try a different power socket. If the issue continues, I'll log a hardware replacement request and our technician will visit within 4 hours.",
+        "For printer issues: 1) Restart the printer, 2) Remove and re-add the printer from Settings > Devices, 3) Clear the print queue. If it's a network printer, ensure you're on the correct network.",
+        "Your hardware concern has been noted. I'll create a ticket (Priority: High) and a Field Support Engineer will contact you within 2 hours to assess and resolve the issue."
+      ]
+    },
+    {
+      "tag": "email_issue",
+      "patterns": [
+        "Email not working",
+        "Cannot send emails",
+        "Outlook is not opening",
+        "Not receiving emails",
+        "Email account locked",
+        "Mail server issue",
+        "My email is down",
+        "Cannot access Outlook",
+        "Email configuration issue",
+        "Setup my email"
+      ],
+      "responses": [
+        "For Outlook/email issues: 1) Restart Outlook, 2) Check your internet connection, 3) Run Outlook in safe mode (outlook.exe /safe). If the issue persists, I'll reset your mailbox configuration.",
+        "Email troubleshooting: Go to File > Account Settings > Test Account Settings in Outlook to diagnose connection issues. Ensure your password is up to date and hasn't expired.",
+        "If you're not receiving emails, your mailbox might be full or filtered incorrectly. Check Junk/Spam folder. Mailbox quota: 50GB. I can raise a ticket to increase your quota if needed."
+      ]
+    },
+    {
+      "tag": "ticket_status",
+      "patterns": [
+        "What is the status of my ticket",
+        "Track my support ticket",
+        "Check ticket status",
+        "My ticket number",
+        "When will my issue be resolved",
+        "Update on my request",
+        "Ticket resolution time",
+        "How long will it take",
+        "ETA on my ticket"
+      ],
+      "responses": [
+        "To check your ticket status: Visit helpdesk.company.com, log in with your employee ID, and go to 'My Tickets'. You'll see real-time updates on your request.",
+        "Please share your ticket number (format: INC-XXXXXX) and I'll pull the latest status for you. You should have received a ticket confirmation email when you first reported the issue.",
+        "Ticket resolution SLAs: P1 (Critical) - 2 hours, P2 (High) - 8 hours, P3 (Medium) - 24 hours, P4 (Low) - 72 hours. I can escalate your ticket if SLA is breached."
+      ]
+    },
+    {
+      "tag": "create_ticket",
+      "patterns": [
+        "Create a ticket",
+        "Raise a support ticket",
+        "Log an issue",
+        "I need help",
+        "Report a problem",
+        "Open a new ticket",
+        "Submit a request",
+        "Log a complaint"
+      ],
+      "responses": [
+        "I'll create a support ticket for you right away. Please describe your issue in detail including: 1) Error message (if any), 2) Device/System affected, 3) Since when the issue started. Our team will respond within the SLA timeline.",
+        "To raise a ticket: Visit helpdesk.company.com/new-ticket or I can log it here. Please provide your Employee ID, department, and a brief description of the issue.",
+        "Ticket created! You'll receive a confirmation email shortly with your ticket number. Reference this number for all future communications. Expected response time: 2-4 hours."
+      ]
+    },
+    {
+      "tag": "system_slow",
+      "patterns": [
+        "My computer is slow",
+        "System is running slow",
+        "Laptop is lagging",
+        "Application is freezing",
+        "PC is very slow",
+        "Programs take too long to load",
+        "My machine is hanging",
+        "System performance issue"
+      ],
+      "responses": [
+        "To fix a slow system: 1) Restart your computer, 2) Close unused applications, 3) Clear browser cache, 4) Run Disk Cleanup (Windows+R > cleanmgr). If the issue persists, I'll schedule a remote optimization session.",
+        "Performance issues can be caused by low disk space or too many startup programs. Check: Task Manager > Startup, and disable unnecessary apps. Also ensure you have at least 10% free disk space.",
+        "I'll run a remote diagnostic on your system. Please stay logged in and available. Our team will connect via remote desktop (TeamViewer/AnyDesk) within 30 minutes to optimize your system."
+      ]
+    },
+    {
+      "tag": "access_request",
+      "patterns": [
+        "I need access to a system",
+        "Grant me access",
+        "Request access to folder",
+        "Need permission to access",
+        "Access denied error",
+        "Cannot open shared drive",
+        "Need admin rights",
+        "Request elevated privileges",
+        "Access to application"
+      ],
+      "responses": [
+        "Access requests require manager approval. Please raise an Access Request form at portal.company.com/access, fill in the system/application name, and get your manager's digital signature. Processing time: 24-48 hours.",
+        "For access denied errors: 1) Verify you're using the correct credentials, 2) Ensure your VPN is connected, 3) Check with your manager if your role permits access. I can raise an emergency access request if business-critical.",
+        "Admin rights requests must be approved by your Department Head and IT Security. Please submit the request with a valid business justification at the IT portal. Temporary admin access can be granted for 8 hours for specific tasks."
+      ]
+    },
+    {
+      "tag": "antivirus_security",
+      "patterns": [
+        "My antivirus is expired",
+        "I think I have a virus",
+        "Malware on my system",
+        "Suspicious activity",
+        "Ransomware alert",
+        "Phishing email",
+        "Security threat detected",
+        "Antivirus not updating"
+      ],
+      "responses": [
+        "SECURITY ALERT: If you suspect malware or ransomware - 1) Disconnect from the network IMMEDIATELY, 2) Do NOT shut down the system, 3) Call the security team at ext. 911 or security@company.com right away. This is a P1 incident.",
+        "For phishing emails: 1) Do NOT click any links or attachments, 2) Forward the email to security@company.com, 3) Delete it from your inbox. We'll investigate and blacklist the sender.",
+        "Antivirus update: Your system should auto-update via the corporate endpoint. If it's not updating, please run the corporate update tool or I'll push a remote update to your system."
+      ]
+    },
+    {
+      "tag": "remote_work",
+      "patterns": [
+        "How to work from home",
+        "Remote desktop not connecting",
+        "VPN setup",
+        "Cannot connect to office remotely",
+        "Work from home setup",
+        "Remote access issue",
+        "Configure VPN",
+        "Two factor authentication"
+      ],
+      "responses": [
+        "For remote work setup: 1) Install the corporate VPN client (GlobalProtect/Cisco AnyConnect), 2) Use your network credentials to connect, 3) Once connected, use Remote Desktop (mstsc) to access your office PC. Guide: portal.company.com/wfh-guide",
+        "VPN troubleshooting: Ensure your internet is working, try disconnecting and reconnecting the VPN, check if your VPN credentials have expired. Contact IT if you get 'Authentication Failed' — your account may need unlocking.",
+        "For 2FA issues: If you've changed your phone or lost access to your authenticator app, contact the IT helpdesk immediately with your employee ID and manager's name for verification. We'll reset your 2FA within 30 minutes."
+      ]
+    },
+    {
+      "tag": "data_backup",
+      "patterns": [
+        "I lost my data",
+        "Accidentally deleted files",
+        "File recovery",
+        "Restore my data",
+        "Backup not working",
+        "How to recover deleted files",
+        "Data loss",
+        "Restore from backup"
+      ],
+      "responses": [
+        "For accidental file deletion: 1) Check Recycle Bin first, 2) Check OneDrive/SharePoint version history, 3) If files were on shared drive, IT can restore from last night's backup. Act quickly — backups are retained for 30 days.",
+        "Data recovery request has been logged as high priority. Please do NOT save any new data to the affected drive. Our team will attempt recovery from the last available backup point (typically within 24 hours).",
+        "To prevent future data loss: Ensure all files are saved on OneDrive or the mapped network drive (G: Drive), not on local Desktop/Downloads. Local data is NOT backed up automatically."
+      ]
+    },
+    {
+      "tag": "new_employee_setup",
+      "patterns": [
+        "New employee setup",
+        "Onboarding IT setup",
+        "I am a new joiner",
+        "Setup my workstation",
+        "I just joined",
+        "New laptop configuration",
+        "First day IT setup",
+        "Need my laptop configured"
+      ],
+      "responses": [
+        "Welcome aboard! For new employee IT setup: 1) Your laptop will be pre-configured by IT, 2) Collect it from IT desk on your first day, 3) Use your Employee ID as the initial password (change it on first login). Check your welcome email for all credentials.",
+        "New joiner checklist: ✓ Laptop setup ✓ Email activation ✓ VPN access ✓ Software installation ✓ Building access card. Your IT buddy will guide you through the setup. Feel free to ask me anything!",
+        "For onboarding IT requests, your HR team would have submitted a request on your behalf. If anything is missing, raise a ticket mentioning 'New Joiner - [Your Name] - [Start Date]' and we'll prioritize it."
+      ]
+    },
+    {
+      "tag": "software_error",
+      "patterns": [
+        "Application is crashing",
+        "Software showing error",
+        "Blue screen of death",
+        "BSOD",
+        "Application not responding",
+        "Error code",
+        "Software not working",
+        "Getting an error message",
+        "Application keeps closing"
+      ],
+      "responses": [
+        "For application crashes: 1) Note the exact error message/code, 2) Restart the application, 3) Restart your system. If the issue repeats, please share a screenshot of the error and I'll escalate to the application support team.",
+        "Blue Screen of Death (BSOD) could indicate driver or hardware issues. Please note the error code shown on the blue screen and contact us immediately. Do NOT restart repeatedly — it may cause data loss.",
+        "Error code troubleshooting: Please share the exact error code or message. Common fixes: reinstall the application, update drivers, or repair the software via Control Panel > Programs. I can also schedule a remote session."
+      ]
+    },
+    {
+      "tag": "meeting_tools",
+      "patterns": [
+        "Teams not working",
+        "Zoom is not connecting",
+        "Cannot join meeting",
+        "Microphone not working",
+        "Camera not working in Teams",
+        "Audio issue in meeting",
+        "Video call problem",
+        "Google Meet issue"
+      ],
+      "responses": [
+        "For Teams/Zoom issues: 1) Check mic and camera permissions in browser/app settings, 2) Restart the application, 3) Test audio at Settings > Devices in Teams. If others can't hear you, check if mic is muted at OS level.",
+        "Camera not working: Go to Device Manager > Imaging Devices, right-click your camera and select 'Enable'. Also check if another application (e.g., Skype) is using the camera in the background.",
+        "For meeting audio issues: Use a headset for better audio quality. Test your device at aka.ms/testyourdevices (Teams). If on VPN, ensure Teams traffic is not being routed through VPN (split tunneling recommended)."
+      ]
+    },
+    {
+      "tag": "it_policy",
+      "patterns": [
+        "What is the IT policy",
+        "BYOD policy",
+        "Can I use personal device",
+        "Internet usage policy",
+        "Data privacy policy",
+        "What software is allowed",
+        "IT rules and regulations",
+        "Acceptable use policy"
+      ],
+      "responses": [
+        "Our IT Acceptable Use Policy covers: 1) Only company-approved software is allowed, 2) Personal use of internet is limited to 20%, 3) Sensitive data must not be shared via personal email, 4) All devices must have company antivirus. Full policy: portal.company.com/it-policy",
+        "BYOD (Bring Your Own Device) Policy: Personal devices can be enrolled via MDM (Mobile Device Management) for email/calendar access only. They must meet minimum security standards (OS updated, screen lock enabled, no jailbreak).",
+        "Data Privacy: All company data is classified as Confidential. Do not share client data, source code, or financial reports via personal accounts. Violations may result in disciplinary action as per company policy."
+      ]
+    },
+    {
+      "tag": "escalation",
+      "patterns": [
+        "I need to speak to a human",
+        "Connect me to an agent",
+        "Talk to real person",
+        "Escalate my issue",
+        "I need urgent help",
+        "This is an emergency",
+        "Speak to IT manager",
+        "My issue is not resolved"
+      ],
+      "responses": [
+        "Escalating your issue to a Level 2 IT Support Engineer right now. Please stay available — an engineer will contact you within 15 minutes via phone or remote session.",
+        "Connecting you to a live IT Support agent. Current wait time: ~5 minutes. Alternatively, call our helpdesk directly at +91-XXXX-XXXXXX (Mon-Fri 8AM-8PM) or ext. 1000 from any office phone.",
+        "Your issue has been marked as URGENT and escalated to the IT Manager. You'll receive a callback within 10 minutes. Ticket priority has been upgraded to P1."
       ]
     }
   ]

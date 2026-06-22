@@ -1,5 +1,4 @@
 import numpy as np
-import random
 import json
 import os
 
@@ -31,14 +30,14 @@ for intent in intents['intents']:
         all_words.extend(w)
         xy.append((w, tag))
 
-ignore_words = ['?', '.', '!']
+ignore_words = ['?', '.', '!', ',']
 all_words = [stem(w) for w in all_words if w not in ignore_words]
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 
-print(len(xy), "patterns")
-print(len(tags), "tags:", tags)
-print(len(all_words), "unique stemmed words:", all_words)
+print(f"{len(xy)} patterns")
+print(f"{len(tags)} tags: {tags}")
+print(f"{len(all_words)} unique stemmed words")
 
 X_train = []
 y_train = []
@@ -52,12 +51,12 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters
-num_epochs = 1000
-batch_size = 8
+num_epochs    = 1000
+batch_size    = 8
 learning_rate = 0.001
-input_size = len(X_train[0])
-hidden_size = 8
-output_size = len(tags)
+input_size    = len(X_train[0])
+hidden_size   = 8
+output_size   = len(tags)
 print(f"Input size: {input_size}, Output size: {output_size}")
 
 
@@ -90,7 +89,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
-        words = words.to(device)
+        words  = words.to(device)
         labels = labels.to(dtype=torch.long).to(device)
 
         outputs = model(words)
@@ -103,15 +102,15 @@ for epoch in range(num_epochs):
     if (epoch + 1) % 100 == 0:
         print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
-print(f'Final loss: {loss.item():.4f}')
+print(f'\nFinal loss: {loss.item():.4f}')
 
 data = {
     "model_state": model.state_dict(),
-    "input_size": input_size,
+    "input_size":  input_size,
     "hidden_size": hidden_size,
     "output_size": output_size,
-    "all_words": all_words,
-    "tags": tags
+    "all_words":   all_words,
+    "tags":        tags
 }
 
 FILE = os.path.join(BASE_DIR, "data.pth")
